@@ -1,0 +1,40 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+}
+
+.content {
+    height: calc(100% - 50px);
+}
+
+.login-page {
+    background: #141E30;
+    background: -webkit-radial-gradient(50% 0%, ellipse cover, #1f344a, #141E30 70%);
+    .header {
+        background: #141E30;
+        .taskbar i {
+            color: #CCC;
+        }
+    }
+    .content {
+        background: transparent;
+    }
+}
+
+.app-page {
+    .content {
+        background: white;
+    }
+}
+
+
+@import 'modules/animations';
+@import 'modules/inputs';
+@import 'modules/header';
+@import 'modules/login';
