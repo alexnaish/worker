@@ -9,19 +9,9 @@ body {
     font-weight: 300;
 }
 
-.content {
-    height: calc(100% - 50px);
-}
-
 .login-page {
     background: #141E30;
     background: -webkit-radial-gradient(50% 0%, ellipse cover, #1f344a, #141E30 70%);
-    .header {
-        background: #141E30;
-        .taskbar i {
-            color: #CCC;
-        }
-    }
     .content {
         background: transparent;
     }

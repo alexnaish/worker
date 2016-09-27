@@ -1,14 +1,28 @@
+import PouchDB from 'pouchdb';
 import { combineReducers } from 'redux'
-import { GET_CLIENTS_SUCCESS } from '../constants/types'
+import { LOADING_CLIENTS, LOADED_CLIENTS, GET_CLIENTS_SUCCESS } from '../constants/types'
 
-export function clients(state = {}, action = {}) {
+export function loading(state = {}, action = {}) {
+    switch (action.type) {
+        case LOADING_CLIENTS:
+            return true;
+            break;
+        case LOADED_CLIENTS:
+            return false;
+            break;
+        default:
+            return false;
+    }
+}
+
+export function list(state = {}, action = {}) {
     if (action.type === GET_CLIENTS_SUCCESS) {
         return action.payload.rows;
     }
     return state;
 }
 
-export function clientsCount(state = {}, action = {}) {
+export function count(state = {}, action = {}) {
     if (action.type === GET_CLIENTS_SUCCESS) {
         return action.payload.total_rows;
     }
@@ -16,6 +30,7 @@ export function clientsCount(state = {}, action = {}) {
 }
 
 export default combineReducers({
-    clients,
-    clientsCount
+    loading,
+    list,
+    count
 });

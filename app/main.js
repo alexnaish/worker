@@ -10,8 +10,8 @@ function createWindow() {
 		height: 720,
 		minWidth: 640,
 		minHeight: 600,
-		transparent: true,
-		frame: false,
+		// transparent: true,
+		// frame: false,
 		center: true,
 		show: false
 	});

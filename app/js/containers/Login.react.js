@@ -9,12 +9,6 @@ import { attemptLogin } from '../actions/auth';
 
 export class App extends Component {
 
-	componentDidMount() {
-		if(this.props.auth.isLoggedIn) {
-			this.props.router.push('/app')
-		}
-	}
-
 	onLoginSubmit(params) {
 		this.props.actions.attemptLogin(params);
 	}
@@ -23,7 +17,6 @@ export class App extends Component {
 		const { error } = this.props.auth;
 		return (
 			<div className="login-page">
-				<Header displayUtils={false}/>
 				<div className='content'>
 					<LoginPage errorMessage={error} onSubmit={this.onLoginSubmit.bind(this)}/>
 				</div>

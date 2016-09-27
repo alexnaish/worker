@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import {Provider} from 'react-redux';
-import { Router, Route, Redirect, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, Redirect, IndexRoute } from 'react-router';
 
 import { requireAuthentication } from '../auth/AuthenticatedComponent.react';
 import AppContainer from '../containers/App.react';
@@ -11,12 +11,13 @@ import MissingPage from '../misc/MissingPage.react';
 export class Root extends Component {
 
     static propTypes = {
-        store: PropTypes.object.isRequired
+        store: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
     }
 
     render () {
         return (<Provider store={this.props.store}>
-            <Router history={hashHistory}>
+            <Router history={this.props.history}>
                 <Redirect from="/" to="/login" />
                 <Route path="/login" component={LoginContainer} />
                 <Route path="/app" component={requireAuthentication(AppContainer)} >
